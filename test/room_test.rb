@@ -1,7 +1,4 @@
-require 'minitest/autorun'
-require 'minitest/pride'
-require './lib/room'
-require 'pry'
+require './helper.rb'
 
 class RoomTest < Minitest::Test
 

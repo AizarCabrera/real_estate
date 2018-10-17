@@ -1,0 +1,5 @@
+require 'minitest/autorun'
+require 'minitest/pride'
+require './lib/house'
+require './lib/room'
+require 'pry'

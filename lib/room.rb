@@ -1,5 +1,7 @@
+require 'pry'
 
 class Room
+
   attr_reader :category
 
   def initialize(category, width, length)
