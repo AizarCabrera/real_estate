@@ -7,9 +7,9 @@ class Room
    @width    = width
    @length   = length
   end
-  #
-  # def area(area)
-  #   area = 10 * 13
-  # end
+
+  def area
+    @width * @length
+  end
 
 end

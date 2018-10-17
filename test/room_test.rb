@@ -17,11 +17,9 @@ class RoomTest < Minitest::Test
    assert_equal :bedroom, @room.category
  end
 
- # def test_if_it_has_area
- #   room = Room.new
- #
- #   assert_equal 130, room.area
- # end
+ def test_if_it_has_area
+   assert_equal 130, @room.area
+ end
 
 
 end
