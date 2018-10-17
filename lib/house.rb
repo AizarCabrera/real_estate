@@ -1,16 +1,13 @@
 require 'pry'
 class House
 
-  attr_reader :category,
-            :price,
-            :address,
-            :rooms
+  attr_reader :address,:price,:rooms
 
   def initialize(price, address)
     @price     = price[1..-1].to_i
     @address   = address
+    @rooms     = []
   # @category = category
-  # @rooms    = []
   end
 
  #

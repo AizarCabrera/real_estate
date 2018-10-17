@@ -18,10 +18,10 @@ class HouseTest < Minitest::Test
     assert_equal "123 sugar lane", @house.address
   end
 
+  def test_if_it_starts_with_empty_rooms
+    assert_equal [], @house.rooms
+  end
 
- # pry(main)> house.address
- # #=> "123 sugar lane"
- #
  # pry(main)> house.rooms
  # #=> []
  #
