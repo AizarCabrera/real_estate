@@ -11,14 +11,22 @@ class House
     @rooms     = []
   end
 
- def add_room(room)
+  def add_room(room)
    @rooms << room
- end
+  end
 
- def rooms_from_category(room_category)
+  def rooms_from_category(room_category)
     @rooms.find_all do |room|
      room.category == room_category
     end
- end
+  end
+
+  def area
+    @rooms.map do |room|
+      area = room.area
+    end.sum
+  end
+
+
 
 end
