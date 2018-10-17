@@ -1,19 +1,17 @@
-require 'pry
-'
+require 'pry'
 class House
 
-attr_reader :category,
+  attr_reader :category,
             :price,
             :address,
             :rooms
 
-
- def initialized
-  @category = category
-  @price    = amount
-  @address  = address
-  @rooms    = []
- end
+  def initialize(price, address)
+    @price     = price
+    @address   = address
+  # @category = category
+  # @rooms    = []
+  end
 
  #
  # def price

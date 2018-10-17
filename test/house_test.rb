@@ -3,7 +3,7 @@ require './helper.rb'
 class HouseTest < Minitest::Test
 
   def setup
-    @house = House.new
+    @house = House.new("$400000", "123 sugar lane")
   end
 
   def test_if_it_exists
@@ -16,6 +16,37 @@ class HouseTest < Minitest::Test
  #   assert_equal 400000, house.price
  # end
  #
+ #
+ # pry(main)> house = House.new("$400000", "123 sugar lane")
+ # #=> #<House:0x00007fccd30375f8...>
+ #
+ # pry(main)> house.price
+ # #=> 400000
+ #
+ # pry(main)> house.address
+ # #=> "123 sugar lane"
+ #
+ # pry(main)> house.rooms
+ # #=> []
+ #
+ # pry(main)> room_1 = Room.new(:bedroom, 10, 13)
+ # #=> #<Room:0x00007fccd29b5720...>
+ #
+ # pry(main)> room_2 = Room.new(:bedroom, 11, 15)
+ # #=> #<Room:0x00007fccd2985f48...>
+ #
+ # pry(main)> house.add_room(room_1)
+ # #=> [#<Room:0x00007fccd29b5720...]
+ #
+ # pry(main)> house.add_room(room_2)
+ # #=> [#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>]
+ #
+ # pry(main)> house.rooms
+ # #=> [#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>]
+ # ```
+
+
+
  # def test_if_it_has_an_address
  #   house = House.new
  #
