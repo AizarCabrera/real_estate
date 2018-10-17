@@ -6,6 +6,8 @@ class HouseTest < Minitest::Test
     @house = House.new("$400000", "123 sugar lane")
     @room_1 = Room.new(:bedroom, 10, 13)
     @room_2 = Room.new(:bedroom, 11, 15)
+    @room_3 = Room.new(:living_room, 25, 15)
+    @room_4 = Room.new(:basement, 30, 41)
   end
 
   def test_if_it_exists
@@ -34,48 +36,44 @@ class HouseTest < Minitest::Test
     assert_equal [@room_1, @room_2], @house.rooms
   end
 
+  def test_if_it_can_add_several_rooms
+    @house.add_room(@room_1)
+    @house.add_room(@room_2)
+    @house.add_room(@room_3)
+    @house.add_room(@room_4)
+    assert_equal [@room_1, @room_2, @room_3, @room_4], @house.rooms
+  end
 
- # pry(main)> house.add_room(room_1)
- # #=> [#<Room:0x00007fccd29b5720...]
- #
- # pry(main)> house.add_room(room_2)
- # #=> [#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>]
- #
- # pry(main)> house.rooms
- # #=> [#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>]
- # ```
-
-
-
- # def test_if_it_has_an_address
- #   house = House.new
- #
- #   assert_equal "123 sugar lane", house.address
- # end
- #
- # def test_if_it_has_rooms
- #   house = House.new
- #
- #   assert_equal [], house.rooms
- # end
- #
- # def test_if_it_can_have_more_than_one_room
- #   house = House.new
- #   room_1 = Room.new
- #   room_2 = Room.new
- #
- #   assert_instance_of Room, room_1
- #   assert_instance_of Room, room_2
- # end
- #
- # def test_if_it_can_add_rooms
- #   house = House.new
- #   room_1 = Room.new
- #   room_2 = Room.new
- #
- #   assert_equal[<Room:0x00007fccd29b5720...] , house.add_room
- # end
- #
+  #
+  # pry(main)>
+  # #=> #<Room:0x00007fccd383c2d0...>
+  #
+  # pry(main)>
+  # #=> #<Room:0x00007fccd297dc30...>
+  #
+  # pry(main)> house.add_room(room_1)
+  # #=> [#<Room:0x00007fccd29b5720...]
+  #
+  # pry(main)> house.add_room(room_2)
+  # #=> [#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>]
+  #
+  # pry(main)> house.add_room(room_3)
+  # #=> [#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>, #<Room:0x00007fccd383c2d0...>]
+  #
+  # pry(main)> house.add_room(room_4)
+  # #=> [#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>, #<Room:0x00007fccd383c2d0...>, #<Room:0x00007fccd297dc30...>]
+  #
+  # pry(main)> house.rooms_from_category(:bedroom)
+  # #=> [#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>]
+  #
+  # pry(main)> house.rooms_from_category(:basement)
+  # #=> [#<Room:0x00007fccd297dc30...>]
+  #
+  # pry(main)> house.area
+  # #=> 1900
+  # ```
+  #
+  # ##
 
 
 end
