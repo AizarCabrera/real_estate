@@ -71,15 +71,16 @@ class HouseTest < Minitest::Test
     assert_equal 210.53, @house.price_per_square_foot
   end
 
+  def test_it_can_sort_rooms_by_area
+    @house.add_room(@room_1)
+    @house.add_room(@room_2)
+    @house.add_room(@room_3)
+    @house.add_room(@room_4)
+    assert_equal [@room_4, @room_3, @room_2, @room_1], @house.rooms_sorted_by_area
+  end
+
 end
 
-#
-# pry(main)> house.price_per_square_foot
-# #=> 210.53
-#
-# pry(main)> house.rooms_sorted_by_area
-# #=> [#<Room:0x00007fccd297dc30...>, #<Room:0x00007fccd383c2d0...>, #<Room:0x00007fccd2985f48...>, #<Room:0x00007fccd29b5720...>]
-#
 # pry(main)> house.rooms_by_category
 # #=> {:bedroom=>[#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>], :living_room=> [#<Room:0x00007fccd383c2d0...>], :basement=> [#<Room:0x00007fccd297dc30...>]}
 # ```
