@@ -28,6 +28,12 @@ class HouseTest < Minitest::Test
     assert_equal [@room_1], @house.add_room(@room_1)
   end
 
+  def test_if_it_can_add_more_than_one_room
+    @house.add_room(@room_1)
+    @house.add_room(@room_2)
+    assert_equal [@room_1, @room_2], @house.rooms
+  end
+
 
  # pry(main)> house.add_room(room_1)
  # #=> [#<Room:0x00007fccd29b5720...]
