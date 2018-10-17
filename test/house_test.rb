@@ -44,25 +44,13 @@ class HouseTest < Minitest::Test
     assert_equal [@room_1, @room_2, @room_3, @room_4], @house.rooms
   end
 
-  #
-  # pry(main)>
-  # #=> #<Room:0x00007fccd383c2d0...>
-  #
-  # pry(main)>
-  # #=> #<Room:0x00007fccd297dc30...>
-  #
-  # pry(main)> house.add_room(room_1)
-  # #=> [#<Room:0x00007fccd29b5720...]
-  #
-  # pry(main)> house.add_room(room_2)
-  # #=> [#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>]
-  #
-  # pry(main)> house.add_room(room_3)
-  # #=> [#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>, #<Room:0x00007fccd383c2d0...>]
-  #
-  # pry(main)> house.add_room(room_4)
-  # #=> [#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>, #<Room:0x00007fccd383c2d0...>, #<Room:0x00007fccd297dc30...>]
-  #
+  def test_if_rooms_have_category
+    @house.add_room(@room_1)
+    @house.add_room(@room_2)
+    assert_equal [@room_1, @room_2], @house.rooms_from_category(:bedroom)
+  end
+
+
   # pry(main)> house.rooms_from_category(:bedroom)
   # #=> [#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>]
   #
