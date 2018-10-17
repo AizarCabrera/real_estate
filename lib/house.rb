@@ -10,22 +10,8 @@ class House
   # @category = category
   end
 
- #
- # def price
- # amount = 400000
- # end
- #
- # def address
- # address = "123 sugar lane"
- # end
- #
- # def rooms
- # @rooms    = []
- # end
- #
- # def add_room
- #   @rooms    = []
- #
- # end
+ def add_room(room)
+   @rooms << room
+ end
 
 end
