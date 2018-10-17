@@ -50,13 +50,13 @@ class HouseTest < Minitest::Test
     assert_equal [@room_1, @room_2], @house.rooms_from_category(:bedroom)
   end
 
+  def test_if_rooms_have_different_category
+    @house.add_room(@room_4)
+    assert_equal [@room_4], @house.rooms_from_category(:basement)
+  end
 
-  # pry(main)> house.rooms_from_category(:bedroom)
-  # #=> [#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>]
-  #
-  # pry(main)> house.rooms_from_category(:basement)
-  # #=> [#<Room:0x00007fccd297dc30...>]
-  #
+
+
   # pry(main)> house.area
   # #=> 1900
   # ```
