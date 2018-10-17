@@ -7,7 +7,7 @@ class House
             :rooms
 
   def initialize(price, address)
-    @price     = price
+    @price     = price[1..-1].to_i
     @address   = address
   # @category = category
   # @rooms    = []
