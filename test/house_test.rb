@@ -79,8 +79,13 @@ class HouseTest < Minitest::Test
     assert_equal [@room_4, @room_3, @room_2, @room_1], @house.rooms_sorted_by_area
   end
 
-end
+  def test_it_can_sort_rooms_by_category
+    @house.add_room(@room_1)
+    @house.add_room(@room_2)
+    @house.add_room(@room_3)
+    @house.add_room(@room_4)
+    expected = {:bedroom=>[@room_1, @room_2], :living_room=> [@room_3], :basement=> [@room_4]}
+    assert_equal expected, @house.rooms_by_category
+  end
 
-# pry(main)> house.rooms_by_category
-# #=> {:bedroom=>[#<Room:0x00007fccd29b5720...>, #<Room:0x00007fccd2985f48...>], :living_room=> [#<Room:0x00007fccd383c2d0...>], :basement=> [#<Room:0x00007fccd297dc30...>]}
-# ```
+end
